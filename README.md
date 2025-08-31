@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Website
 
-## Getting Started
+This is my personal portfolio website, built with Next.js and Tailwind CSS.
+It showcases my projects, skills, and experience as a full-stack developer.
 
-First, run the development server:
+# Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Next.js
+2. Tailwind CSS
+3. Framer Motion
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Responsive design (very mobile-friendly)
+2. Animations with Framer Motion
+3. Contact information & links
+4. About page
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Why I Built This
 
-## Learn More
+**It was the ultimate test of skill.**
 
-To learn more about Next.js, take a look at the following resources:
+I felt like as a web developer, I could really leave a good impression by showcasing all my projects and skills on a website I built from the ground up, all alone. Creating this portfolio was not just writing code, but involved planning the structure, designing a clean and responsive layout, and ensuring smooth responsiveness across all types of devices.
+Along the way, I applied technical skills such as React, Next.js, Tailwind CSS, and soft skills like problem-solving, adaptability, and attention to detail.
+This was a fun and valuable journey that also challenged me to think like both a developer and a designer.
+Even now, I’m always looking for ways to expand this project with new pages, features, or details as I continue to grow my skill set.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License – feel free to use the code as a reference for your own portfolio.
