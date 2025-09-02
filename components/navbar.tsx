@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 export const Navbar = () => {
   const path = usePathname();
@@ -31,7 +32,17 @@ export const Navbar = () => {
         ref={menuRef}
       >
         {/* Logo */}
-        <h1 className="font-bold text-white">David&apos;s Portfolio</h1>
+        <div className="items-center justify-center mb-3">
+          <Link href="/">
+            <Image
+              src="/images/name.png"
+              alt="David's Portfolio"
+              width={250}
+              height={250}
+              className="hover:scale-105 transition"
+            />
+          </Link>
+        </div>
 
         {/* Mobile menu button */}
         <button
