@@ -14,15 +14,8 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000000;
-    --foreground: #fbf5f3;
-
-    --climpek: url("/images/climpek.png");
-  }
+  --climpek: url("/images/climpek.png");
 }
 
 body {
@@ -31,4 +24,11 @@ body {
   background-repeat: repeat;
   color: var(--foreground);
   font-family: Calibri, "Times New Roman", serif;
+  overflow-x: hidden;
+}
+
+/* Custom Colors */
+
+.text-yourblog {
+  color: rgba(22, 185, 197, 0.7);
 }

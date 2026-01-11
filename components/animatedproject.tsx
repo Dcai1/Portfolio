@@ -25,7 +25,7 @@ export const AnimatedProject = ({
   inView = "visible",
 }: AnimatedProjectProps) => {
   return (
-    <div className="flex items-center justify-center w-full sm:min-h-screen">
+    <div className="flex items-center justify-center w-full">
       <motion.div
         className="flex mx-auto w-fit"
         variants={variants}

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { FooterImage } from "./footerimage";
 
 export const Footer = () => {
   return (
@@ -30,21 +31,19 @@ export const Footer = () => {
       <div className="w-full h-px my-4 bg-gradient-to-r from-transparent via-snow to-transparent"></div>
 
       {/* Bottom row */}
-      <div className="flex justify-center my-auto mb-4">
-        <Link
+      <div className="flex justify-center my-auto mb-4 gap-2">
+        <FooterImage
           href="https://github.com/Dcai1"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="/images/github-mark-white.svg"
-            alt="GitHub"
-            title="Access my Github here"
-            width={30}
-            height={30}
-            className="transition hover:opacity-80 hover:scale-120 active:scale-95"
-          />
-        </Link>
+          src="/images/github-mark-white.svg"
+          alt="GitHub"
+          title="Access my Github here"
+        />
+        <FooterImage
+          href="https://www.linkedin.com/in/david-cai-24b08427b/"
+          src="/images/linkedin.svg"
+          alt="LinkedIn"
+          title="View my LinkedIn"
+        />
       </div>
       <p className="text-sm text-center">
         © 2025 David Cai. All rights reserved.

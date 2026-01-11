@@ -49,7 +49,7 @@ export const Navbar = () => {
           className="text-white sm:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {/* Simple hamburger icon */}
+          {/* Hamburger icon */}
           <div className="space-y-1">
             <span className="block w-6 h-0.5 bg-white"></span>
             <span className="block w-6 h-0.5 bg-white"></span>
@@ -82,7 +82,7 @@ export const Navbar = () => {
   );
 };
 
-// Small reusable link component
+// Reusable link component
 const NavLink = ({
   path,
   href,
