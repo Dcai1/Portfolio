@@ -25,6 +25,14 @@ export const Footer = () => {
         >
           About
         </Link>
+        {/* Resume */}
+        <Link
+          href="/resume.pdf"
+          className="transition hover:underline hover:scale-105 active:scale-95 hover:text-fulvous"
+          target="_blank"
+        >
+          My Resume
+        </Link>
       </div>
 
       {/* Fading divider */}

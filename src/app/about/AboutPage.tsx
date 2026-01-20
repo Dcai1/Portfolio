@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -54,19 +55,41 @@ export default function AboutPage() {
           </motion.strong>{" "}
           My journey began at a young age with curiosity in how websites worked
           behind the scenes, and it&apos;s grown into a drive to build
-          meaningful projects with both design and functionality. <br />I am
-          passionate at what I do,{" "}
+          meaningful projects with both design and functionality, like one of my
+          projects,{" "}
           <motion.strong
             initial={{ color: "#FFFFFF" }}
             animate={{ color: "#E28413" }}
             transition={{ delay: 2.1, duration: 0.5 }}
           >
+            <Link
+              href={"https://pokeweb-site.vercel.app/"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline hover:scale-105 transition"
+            >
+              PokéWeb
+            </Link>
+          </motion.strong>
+          . <br />I am passionate and dedicated to what I do,{" "}
+          <motion.strong
+            initial={{ color: "#FFFFFF" }}
+            animate={{ color: "#E28413" }}
+            transition={{ delay: 2.2, duration: 0.5 }}
+          >
             to the point of feeling excitement,
           </motion.strong>{" "}
-          and I enjoy learning and applying new skills. I believe I am capable
-          of learning on the job should the situation require it. <br /> This is
-          getting long, so I&apos;ll end this with a quote that has been guiding
-          me along this journey:
+          and I enjoy learning and applying those new skills. I can fill a
+          variety of roles, from front-end, to back-end, and{" "}
+          <motion.strong
+            initial={{ color: "#FFFFFF" }}
+            animate={{ color: "#E28413" }}
+            transition={{ delay: 2.3, duration: 0.5 }}
+          >
+            experienced in a variety of skills, like WordPress.
+          </motion.strong>
+          <br /> This is getting long, so I&apos;ll end this with a quote that
+          has been guiding me along this journey:
         </motion.p>
         <motion.q className="italic">
           Someone who loves what they do will always learn faster than one who
@@ -86,7 +109,7 @@ export default function AboutPage() {
             whileTap={{ scale: 0.95 }}
           >
             <h2 className="font-semibold text-fulvous sm:text-2xl">Frontend</h2>
-            <p>React, Next.js, Tailwind</p>
+            <p>React, Next.js, Tailwind, Bootstrap, WordPress</p>
           </motion.div>
           <motion.div
             className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
@@ -94,7 +117,7 @@ export default function AboutPage() {
             whileTap={{ scale: 0.95 }}
           >
             <h2 className="font-semibold text-fulvous sm:text-2xl">Backend</h2>
-            <p>Node.js, Prisma</p>
+            <p>Node.js, Prisma, REST APIs</p>
           </motion.div>
           <motion.div
             className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
@@ -104,7 +127,7 @@ export default function AboutPage() {
             <h2 className="font-semibold text-fulvous sm:text-2xl">
               Databases
             </h2>
-            <p>MySQL, Prisma, MongoDB</p>
+            <p>MySQL, Prisma, MongoDB, PostgreSQL</p>
           </motion.div>
           <motion.div
             className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
@@ -124,9 +147,9 @@ export default function AboutPage() {
           transition={{ delay: 1.2, duration: 0.8 }}
         >
           I love learning new technologies and applying them to real-world
-          projects. Right now, I&apos;m focused on improving my skills in{" "}
+          projects. Right now, I&apos;m focused on seeking employment in{" "}
           <span className="font-semibold text-fulvous">
-            backend development
+            jobs or volunteer work
           </span>{" "}
           and building scalable applications. My goal is to contribute to
           impactful projects while continuing to grow as a developer.
