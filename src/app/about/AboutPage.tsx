@@ -51,12 +51,12 @@ export default function AboutPage() {
             animate={{ color: "#E28413" }}
             transition={{ delay: 2, duration: 0.5 }}
           >
-            passionate about creating interactive and functional applications.
+            passionate about creating exciting and functional applications.
           </motion.strong>{" "}
           My journey began at a young age with curiosity in how websites worked
           behind the scenes, and it&apos;s grown into a drive to build
-          meaningful projects with both design and functionality, like one of my
-          projects,{" "}
+          meaningful projects that are both visually-pleasing and impactful,
+          like one of my projects,{" "}
           <motion.strong
             initial={{ color: "#FFFFFF" }}
             animate={{ color: "#E28413" }}
@@ -109,7 +109,7 @@ export default function AboutPage() {
             whileTap={{ scale: 0.95 }}
           >
             <h2 className="font-semibold text-fulvous sm:text-2xl">Frontend</h2>
-            <p>React, Next.js, Tailwind, Bootstrap, WordPress</p>
+            <p>WordPress, React, Next.js, Tailwind, Bootstrap</p>
           </motion.div>
           <motion.div
             className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
@@ -117,7 +117,7 @@ export default function AboutPage() {
             whileTap={{ scale: 0.95 }}
           >
             <h2 className="font-semibold text-fulvous sm:text-2xl">Backend</h2>
-            <p>Node.js, Prisma, REST APIs</p>
+            <p>Node.js, Prisma, REST APIs, PHP</p>
           </motion.div>
           <motion.div
             className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
@@ -146,13 +146,11 @@ export default function AboutPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          I love learning new technologies and applying them to real-world
-          projects. Right now, I&apos;m focused on seeking employment in{" "}
-          <span className="font-semibold text-fulvous">
-            jobs or volunteer work
-          </span>{" "}
-          and building scalable applications. My goal is to contribute to
-          impactful projects while continuing to grow as a developer.
+          I love learning new tricks and applying them to real-world projects.
+          Right now, I&apos;m focused on seeking employment in{" "}
+          <span className="font-semibold text-fulvous">my first job</span> and
+          building scalable applications. My goal is to contribute to projects
+          that make an impact, while continuing to grow as a developer.
         </motion.p>
 
         {/* Fun Facts */}
@@ -169,16 +167,16 @@ export default function AboutPage() {
             <li>
               When I&apos;m deep into dev sessions, I get too engaged (to the
               point I forget to eat or use the washroom) until I achieve the
-              end-goal. Enjoying what you do has its cons!
+              end-goal. Enjoying what you do has its drawbacks!
             </li>
             <li>
               Adding onto my curiousity for web dev at a young age, I was
               playing around with web development, experimenting with HTML and
-              CSS. I only began taking it seriously at the age of 20.
+              CSS. I only began taking it seriously at the age of 19.
             </li>
             <li>
               Outside of coding, I enjoy playing around in dev tools on websites
-              I didn&apos;t make. There are things you can learn even in there!
+              I didn&apos;t make. There are always things to learn!
             </li>
           </ul>
         </motion.div>
