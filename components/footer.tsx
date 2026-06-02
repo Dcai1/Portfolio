@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { FooterImage } from "./footerimage";
 
 export const Footer = () => {
@@ -44,17 +43,17 @@ export const Footer = () => {
           href="https://github.com/Dcai1"
           src="/images/github-mark-white.svg"
           alt="GitHub"
-          title="Access my Github here"
+          title="View my Github Profile here!"
         />
         <FooterImage
           href="https://www.linkedin.com/in/david-cai-24b08427b/"
           src="/images/linkedin.svg"
           alt="LinkedIn"
-          title="View my LinkedIn"
+          title="View my LinkedIn!"
         />
       </div>
       <p className="text-sm text-center">
-        © 2025 David Cai. All rights reserved.
+        © 2026 David Cai. All rights reserved.
       </p>
     </footer>
   );
