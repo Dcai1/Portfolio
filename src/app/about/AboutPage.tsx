@@ -54,9 +54,8 @@ export default function AboutPage() {
             passionate about creating exciting and functional applications.
           </motion.strong>{" "}
           My journey began at a young age with curiosity in how websites worked
-          behind the scenes, and it&apos;s grown into a drive to build
-          meaningful projects that are both visually-pleasing and impactful,
-          like one of my projects,{" "}
+          behind the scenes, and it&apos;s grown into a goal to build projects
+          that are visually-pleasing and impactful, like one of my projects,{" "}
           <motion.strong
             initial={{ color: "#FFFFFF" }}
             animate={{ color: "#E28413" }}
@@ -68,25 +67,30 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="hover:underline hover:scale-105 transition"
             >
-              PokéWeb
+              !
             </Link>
           </motion.strong>
-          . <br />I am passionate and dedicated to what I do,{" "}
+          <br />
+          I&apos;m dedicated to this goal,{" "}
           <motion.strong
             initial={{ color: "#FFFFFF" }}
             animate={{ color: "#E28413" }}
             transition={{ delay: 2.2, duration: 0.5 }}
           >
-            to the point of feeling excitement,
+            to the point I feel excitement,
           </motion.strong>{" "}
-          and I enjoy learning and applying those new skills. I can fill a
-          variety of roles, from front-end, to back-end, and{" "}
+          and I enjoy learning and applying those new skills. When not working,
+          I can be seen committing and contributing to projects on GitHub. I can
+          fill a variety of roles, from front-end, to back-end, and{" "}
           <motion.strong
             initial={{ color: "#FFFFFF" }}
             animate={{ color: "#E28413" }}
             transition={{ delay: 2.3, duration: 0.5 }}
           >
-            experienced in a variety of skills, like WordPress.
+            developed YourBlog and this portfolio using a variety of skills,
+            like Next.js and WordPress. Visit the{" "}
+            <Link href="/projects">Projects</Link> page and check out my
+            projects page to see them in more detail!
           </motion.strong>
           <br /> This is getting long, so I&apos;ll end this with a quote that
           has been guiding me along this journey:
@@ -109,7 +113,10 @@ export default function AboutPage() {
             whileTap={{ scale: 0.95 }}
           >
             <h2 className="font-semibold text-fulvous sm:text-2xl">Frontend</h2>
-            <p>WordPress, React, Next.js, Tailwind, Bootstrap</p>
+            <p>
+              HTML, CSS, JavaScript, Next.js, React, WordPress, TailwindCSS,
+              Bootstrap
+            </p>
           </motion.div>
           <motion.div
             className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
@@ -117,7 +124,7 @@ export default function AboutPage() {
             whileTap={{ scale: 0.95 }}
           >
             <h2 className="font-semibold text-fulvous sm:text-2xl">Backend</h2>
-            <p>Node.js, Prisma, REST APIs, PHP</p>
+            <p>Wordpress, Node.js, Prisma, REST APIs, SQL </p>
           </motion.div>
           <motion.div
             className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
@@ -135,7 +142,7 @@ export default function AboutPage() {
             whileTap={{ scale: 0.95 }}
           >
             <h2 className="font-semibold text-fulvous sm:text-2xl">Tools</h2>
-            <p>GitHub</p>
+            <p>SEO, Git, AI Workflow Optimization, UI/UX Design</p>
           </motion.div>
         </motion.div>
 
