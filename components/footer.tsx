@@ -2,8 +2,15 @@
 
 import Link from "next/link";
 import { FooterImage } from "./footerimage";
+import { useRef, useEffect } from "react";
 
 export const Footer = () => {
+  const currentYear = useRef(new Date().getFullYear());
+
+  useEffect(() => {
+    currentYear.current = new Date().getFullYear();
+  }, []);
+
   return (
     <footer className="w-full py-6 text-white border-t border-snow bg-night/70">
       {/* Top row */}
@@ -43,17 +50,17 @@ export const Footer = () => {
           href="https://github.com/Dcai1"
           src="/images/github-mark-white.svg"
           alt="GitHub"
-          title="View my Github Profile here!"
+          title="Visit my Github Profile here!"
         />
         <FooterImage
           href="https://www.linkedin.com/in/david-cai-24b08427b/"
           src="/images/linkedin.svg"
           alt="LinkedIn"
-          title="View my LinkedIn!"
+          title="Visit my LinkedIn!"
         />
       </div>
       <p className="text-sm text-center">
-        © 2026 David Cai. All rights reserved.
+        © {currentYear.current} David Cai. All rights reserved.
       </p>
     </footer>
   );
