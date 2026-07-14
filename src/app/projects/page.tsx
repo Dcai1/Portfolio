@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Portfolio section showcasing full-stack projects built using Next.js, WordPress, React, TypeScript, and other frameworks.",
+    "Explore a collection of web development projects, from polished portfolio sites to real-world applications built with modern tools.",
 };
 
 export default function Projects() {

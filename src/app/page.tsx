@@ -4,19 +4,19 @@ import HomePage from "./HomePage";
 export const metadata: Metadata = {
   title: "Home | David's Portfolio",
   description:
-    "My Full-Stack web developer portfolio showcasing full-stack projects, clean UI design, and practical engineering skills.",
+    "A full-stack portfolio that highlights responsive web apps, thoughtful UI design, and real-world engineering projects.",
   openGraph: {
     title: "Home | David's Portfolio",
     description:
-      "My Full-Stack web developer portfolio showcasing full-stack projects, clean UI design, and practical engineering skills.",
+      "A full-stack portfolio that highlights responsive web apps, thoughtful UI design, and real-world engineering projects.",
     url: "https://davids-portfolio-3828.vercel.app/",
     siteName: "Home | David's Portfolio",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/images/name.png",
         width: 1200,
         height: 630,
-        alt: "Preview image",
+        alt: "David's Portfolio preview image",
       },
     ],
     locale: "en_US",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Home | David's Portfolio",
     description:
-      "My Full-Stack web developer portfolio showcasing full-stack projects, clean UI design, and practical engineering skills.",
-    images: ["/favicon.ico"],
+      "A full-stack portfolio that highlights responsive web apps, thoughtful UI design, side projects and real-world engineering projects.",
+    images: ["/images/name.png"],
   },
 };
 

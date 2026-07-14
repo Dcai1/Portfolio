@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Me",
   description:
-    "Hey there! I'm David, a full-stack web developer passionate about creating interactive and functional applications.",
+    "Hey there! I'm David, a full-stack web developer who enjoys building interactive, functional applications with clear design.",
 };
 
 export default function About() {

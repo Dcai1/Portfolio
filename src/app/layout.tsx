@@ -20,7 +20,31 @@ export const metadata: Metadata = {
     default: "Portfolio",
   },
   description:
-    "A portfolio website that lists all my side projects utilizing different sets of skills.",
+    "A personal portfolio showcasing side projects, engineering work, and polished web experiences.",
+  openGraph: {
+    title: "David's Portfolio",
+    description:
+      "A personal portfolio showcasing side projects, engineering work, and polished web experiences.",
+    url: "https://davids-portfolio-3828.vercel.app/",
+    siteName: "David's Portfolio",
+    images: [
+      {
+        url: "/images/name.png",
+        width: 1200,
+        height: 630,
+        alt: "David's Portfolio preview image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "David's Portfolio",
+    description:
+      "A personal portfolio showcasing side projects, engineering work, and polished web experiences.",
+    images: ["/images/name.png"],
+  },
 };
 
 export default function RootLayout({
