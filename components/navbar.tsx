@@ -25,7 +25,7 @@ export const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="sticky top-0 z-50 text-lg shadow-lg bg-night opacity-90 sm:text-xl shadow-white">
+    <nav className="sticky top-0 z-50 text-lg transition-all duration-300 shadow-lg bg-night opacity-90 sm:text-xl hover:shadow-white">
       {/* Container */}
       <div
         className="flex items-center justify-between max-w-6xl px-4 mx-auto h-14"
@@ -39,7 +39,7 @@ export const Navbar = () => {
               alt="David's Portfolio"
               width={250}
               height={250}
-              className="hover:scale-105 transition"
+              className="transition hover:scale-105"
             />
           </Link>
         </div>
