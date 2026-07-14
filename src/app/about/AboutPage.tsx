@@ -114,8 +114,8 @@ export default function AboutPage() {
           >
             <h2 className="font-semibold text-fulvous sm:text-2xl">Frontend</h2>
             <p>
-              HTML, CSS, JavaScript, Next.js, React, WordPress, TailwindCSS,
-              Bootstrap
+              HTML, CSS, JavaScript, TypeScript, Next.js, React, WordPress,
+              TailwindCSS, Bootstrap
             </p>
           </motion.div>
           <motion.div
@@ -142,7 +142,10 @@ export default function AboutPage() {
             whileTap={{ scale: 0.95 }}
           >
             <h2 className="font-semibold text-fulvous sm:text-2xl">Tools</h2>
-            <p>SEO, Git, AI Workflow Optimization, UI/UX Design</p>
+            <p>
+              SEO, Git, AI Workflow Optimization, UI/UX Design, Python
+              Automation
+            </p>
           </motion.div>
         </motion.div>
 
@@ -179,7 +182,7 @@ export default function AboutPage() {
             <li>
               Adding onto my curiousity for web dev at a young age, I was
               playing around with web development, experimenting with HTML and
-              CSS. I only began taking it seriously at the age of 19.
+              CSS. I only began taking it seriously at the age of 20.
             </li>
             <li>
               Outside of coding, I enjoy playing around in dev tools on websites
