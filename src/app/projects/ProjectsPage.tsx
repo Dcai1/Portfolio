@@ -5,6 +5,7 @@ import { AnimatedProject } from "../../../components/animatedproject";
 import { AnimatedRealWorldProject } from "../../../components/animatedrealworldproject";
 import { easeIn, motion, Variants } from "framer-motion";
 import { realWorldProjects } from "./realWorldData";
+import { sideProjects } from "./sideProjectData";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 15 },
@@ -79,13 +80,13 @@ export default function ProjectsPage() {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <p className="my-auto text-xl text-gray-300 sm:text-3xl">
-          These are the projects I&apos;ve worked on and/or helped ship during
+          These are the projects I&apos;ve developed and/or helped ship during
           my early career. I&apos;ve included a mix of both personal and
           professional projects.
         </p>
       </motion.section>
 
-      {/* Real World Projects — subtle background band + elevated cards */}
+      {/* Real World Projects Section */}
       <section className="relative py-8">
         <div className="absolute left-0 right-0 top-0 bottom-0 pointer-events-none flex justify-center">
           <div
@@ -97,6 +98,7 @@ export default function ProjectsPage() {
           />
         </div>
 
+        {/* Text Content */}
         <div className="relative z-10">
           <motion.section
             className="flex flex-col space-x-6 my-auto pb-6 max-w-3xl mx-auto space-y-6 text-center mb-2"
@@ -113,7 +115,9 @@ export default function ProjectsPage() {
             </p>
           </motion.section>
 
+          {/* Real World Projects Display */}
           <section className="grid max-w-6xl grid-cols-1 items-start gap-12 mx-auto sm:grid-cols-2 lg:grid-cols-3 m-5">
+            {/* Real World Projects Map */}
             {realWorldProjects.map((p) => (
               <div
                 key={p.title}
@@ -145,47 +149,30 @@ export default function ProjectsPage() {
           Side Projects
         </h2>
         <p className="my-auto text-xl text-gray-300 sm:text-3xl">
-          Here are all of my (earlier) side projects I&apos;ve built to explore
-          modern fullstack development. Each one helped me sharpen my skills
-          with real-world tools.
+          Here are all of my side projects I&apos;ve built to explore modern
+          fullstack development. Each one helped me sharpen my skills and
+          knowledge with architecture, security, and real-world tools.
         </p>
       </motion.section>
 
       {/* Projects Grid */}
       <section className="grid max-w-6xl grid-cols-1 items-start gap-12 mx-auto sm:grid-cols-2 lg:grid-cols-3 m-5">
-        <AnimatedProject
-          variants={scaleUpOnView}
-          title="Portfolio Website"
-          description="The site you're currently viewing, built with Next.js, Framer Motion, and Tailwind."
-          url="/"
-          tags="#React #FramerMotion #NextJs #Tailwind #Frontend"
-          color="text-fulvous"
-        />
-        <AnimatedProject
-          variants={scaleUpOnView}
-          title="PokéWeb"
-          description="A Pokémon database site using API data. Displays detailed stats and locations."
-          url="https://pokeweb-site.vercel.app/"
-          tags="#React #API #NextJs #Frontend #Backend #Tailwind"
-          color="text-red-500"
-        />
-        <AnimatedProject
-          variants={scaleUpOnView}
-          title="SpeedList"
-          description="A shopping list app with CRUD operations backed by a database. Built for quick, on-the-go use."
-          url="https://speedlist.vercel.app/"
-          tags="#React #API #NextJs #Prisma #Backend #Tailwind"
-          color="text-gray-200"
-        />
-
-        <AnimatedProject
-          variants={scaleUpOnView}
-          title="YourBlog"
-          description="Anyone can read and create posts with an account. Created using authentication, authorization and an extensive use of APIs."
-          url="https://your-blog-jet.vercel.app/"
-          tags="#REST #Prisma #Bootstrap #Sass #React #NextJs"
-          color="text-yourblog"
-        />
+        {/* Side Projects Map */}
+        {sideProjects.map((p) => (
+          <div
+            key={p.title}
+            className="flex items-center justify-center w-full"
+          >
+            <AnimatedProject
+              variants={scaleUpOnView}
+              title={p.title}
+              description={p.description}
+              url={p.url}
+              tags={p.tags}
+              color={p.color}
+            />
+          </div>
+        ))}
       </section>
     </main>
   );
