@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davids-portfolio-3828.vercel.app/sitemap.xml
