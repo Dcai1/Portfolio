@@ -42,7 +42,7 @@ export const sideProjects = [
   {
     title: "Auto Holder",
     description:
-      "Windows Python Program that holds a key down until toggled off. Both keybinds are rebindable. Created using Python Automation, Pynput, and PySide6. Extremely maintainable.",
+      "A Windows Python Program that holds a key down until toggled off. Both keybinds are rebindable. Created using Python Automation, Pynput, and PySide6. Extremely maintainable.",
     url: "https://github.com/Dcai1/AutoWalker/",
     tags: "#Python #Automation #Input #Clean",
     color: "text-white",
