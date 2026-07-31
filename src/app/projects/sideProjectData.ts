@@ -33,9 +33,18 @@ export const sideProjects = [
   {
     title: "SpeedList",
     description:
-      "An extremely simple web application. Features CRUD operations, with data stored in a PostgreSQL database. Listed for archival purposes.",
+      "An extremely simple web application. Features CRUD operations with data stored in a PostgreSQL database. Listed for archival purposes.",
     url: "https://speedlist.vercel.app/",
     tags: "#React #API #PostgreSQL #NextJs #Prisma #Backend #TailwindCSS",
     color: "text-gray-200",
+  },
+  // Auto Keyboard Holder
+  {
+    title: "Auto Holder",
+    description:
+      "Windows Python Program that holds a key down until toggled off. Both keybinds are rebindable. Created using Python Automation, Pynput, and PySide6. Extremely maintainable.",
+    url: "https://github.com/Dcai1/AutoWalker/",
+    tags: "#Python #Automation #Input #Clean",
+    color: "text-white",
   },
 ];
