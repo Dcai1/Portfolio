@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { Highlight } from "../../../components/textmotion";
+import { AnimatedLink, Highlight } from "../../../components/textmotion";
 
 export default function AboutPage() {
   return (
@@ -41,14 +40,10 @@ export default function AboutPage() {
           behind the scenes, and it&apos;s grown into a goal to build projects
           that are visually-pleasing and impactful, like one of my real-world
           projects for{" "}
-          <Link
+          <AnimatedLink
             href="https://thefoundationontherockrevival.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline hover:scale-105 transition"
-          >
-            this church!
-          </Link>
+            text="this church!"
+          />
           <br />
           I&apos;m dedicated to this goal,{" "}
           <Highlight
