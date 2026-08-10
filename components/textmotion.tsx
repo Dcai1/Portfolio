@@ -78,3 +78,32 @@ export const AnimatedQuote = ({
     </motion.q>
   );
 };
+
+export interface AnimatedLinkProps {
+  href: string;
+  text: string;
+  className?: string;
+  delay?: number;
+  duration?: number;
+}
+
+export const AnimatedLink = ({
+  href,
+  text,
+  className = "font-semibold underline transition hover:no-underline transition-300 text-fulvous underline-offset-8",
+  delay = 0,
+  duration = 0.8,
+}: AnimatedLinkProps) => {
+  return (
+    <motion.a
+      href={href}
+      className={className}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay, duration }}
+      rel="noopener noreferrer"
+    >
+      {text}
+    </motion.a>
+  );
+};
