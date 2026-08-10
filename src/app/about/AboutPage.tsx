@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Highlight } from "../../../components/textmotion";
 
 export default function AboutPage() {
   return (
@@ -19,14 +20,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          About{" "}
-          <motion.span
-            initial={{ color: "#FFFFFF" }}
-            animate={{ color: "#E28413" }}
-            transition={{ delay: 1, duration: 0.5 }}
-          >
-            Me
-          </motion.span>
+          About <Highlight text="Me" />
         </motion.h1>
 
         {/* Intro */}
@@ -37,61 +31,36 @@ export default function AboutPage() {
           transition={{ delay: 0.6, duration: 0.8 }}
         >
           Hi! I&apos;m{" "}
-          <motion.span
-            className="font-semibold text-fulvous"
-            initial={{ color: "#FFFFFF" }}
-            animate={{ color: "#E28413" }}
-            transition={{ delay: 1, duration: 0.5 }}
-          >
-            David
-          </motion.span>
-          , a full-stack web developer{" "}
-          <motion.strong
-            initial={{ color: "#FFFFFF" }}
-            animate={{ color: "#E28413" }}
-            transition={{ delay: 2, duration: 0.5 }}
-          >
-            passionate about creating exciting and functional applications.
-          </motion.strong>{" "}
+          <Highlight text="David" className="font-semibold text-fulvous" />, a
+          full-stack Web Developer and Junior Software Engineer{" "}
+          <Highlight
+            text="passionate about creating exciting and functional applications."
+            className="font-semibold"
+          />{" "}
           My journey began at a young age with curiosity in how websites worked
           behind the scenes, and it&apos;s grown into a goal to build projects
-          that are visually-pleasing and impactful, like one of my projects,{" "}
-          <motion.strong
-            initial={{ color: "#FFFFFF" }}
-            animate={{ color: "#E28413" }}
-            transition={{ delay: 2.1, duration: 0.5 }}
+          that are visually-pleasing and impactful, like one of my real-world
+          projects for{" "}
+          <Link
+            href="https://thefoundationontherockrevival.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline hover:scale-105 transition"
           >
-            <Link
-              href={"https://pokeweb-site.vercel.app/"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline hover:scale-105 transition"
-            >
-              !
-            </Link>
-          </motion.strong>
+            this church!
+          </Link>
           <br />
           I&apos;m dedicated to this goal,{" "}
-          <motion.strong
-            initial={{ color: "#FFFFFF" }}
-            animate={{ color: "#E28413" }}
-            transition={{ delay: 2.2, duration: 0.5 }}
-          >
-            to the point I feel excitement,
-          </motion.strong>{" "}
+          <Highlight
+            text="to the point I feel excitement,"
+            className="font-semibold"
+          />{" "}
           and I enjoy learning and applying those new skills. When not working,
-          I can be seen committing and contributing to projects on GitHub. I can
-          fill a variety of roles, from front-end, to back-end, and{" "}
-          <motion.strong
-            initial={{ color: "#FFFFFF" }}
-            animate={{ color: "#E28413" }}
-            transition={{ delay: 2.3, duration: 0.5 }}
-          >
-            developed YourBlog and this portfolio using a variety of skills,
-            like Next.js and WordPress. Visit the{" "}
-            <Link href="/projects">Projects</Link> page and check out my
-            projects page to see them in more detail!
-          </motion.strong>
+          I can be seen either committing and contributing to projects on
+          GitHub, or learning CyberSecurity.
+          <br />
+          Because of this, I&apos;m eager to fill a variety of important roles
+          like development, testing, and <Highlight text="even" /> security!
           <br /> This is getting long, so I&apos;ll end this with a quote that
           has been guiding me along this journey:
         </motion.p>
