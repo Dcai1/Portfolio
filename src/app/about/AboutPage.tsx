@@ -35,11 +35,12 @@ export default function AboutPage() {
         >
           Hi! I&apos;m{" "}
           <Highlight text="David" className="font-semibold text-fulvous" />, a
-          full-stack Web Developer and Junior Software Engineer{" "}
+          Junior Full-Stack Web Developer and Software Engineer{" "}
           <Highlight
             text="passionate about creating exciting and functional applications."
             className="font-semibold"
           />{" "}
+          <br /> <br />
           My journey began at a young age with curiosity in how websites worked
           behind the scenes, and it&apos;s grown into a goal to build projects
           that are visually-pleasing and impactful, like one of my real-world
@@ -48,20 +49,20 @@ export default function AboutPage() {
             href="https://thefoundationontherockrevival.org/"
             text="this church!"
           />
-          <br />
-          I&apos;m dedicated to this goal,{" "}
+          <br /> <br />
+          I&apos;m dedicated to this goal{" "}
           <Highlight
-            text="to the point I feel excitement,"
+            text="to the point it excites me,"
             className="font-semibold"
           />{" "}
-          and I enjoy learning and applying those new skills. When not working,
-          I can be seen either committing and contributing to projects on
-          GitHub, or learning CyberSecurity.
-          <br />
+          and I enjoy learning and applying those new skills I learn. I can be
+          seen either committing and contributing to projects on GitHub, or
+          learning CyberSecurity in my free time.
+          <br /> <br />
           Because of this, I&apos;m eager to fill a variety of important roles
           like development, testing, and <Highlight text="even" /> security!
-          <br /> This is getting long, so I&apos;ll end this with a quote that
-          has been guiding me along this journey:
+          <br /> <br /> This is getting long, so I&apos;ll end this with a quote
+          that has been guiding me along this journey:
         </motion.p>
         <motion.q className="italic">
           Someone who loves what they do will always learn faster than one who
@@ -116,11 +117,13 @@ export default function AboutPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          I love learning new tricks and applying them to real-world projects.
-          Right now, I&apos;m focused on seeking employment in{" "}
-          <span className="font-semibold text-fulvous">my first job</span> and
-          building scalable applications. My goal is to contribute to projects
-          that make an impact, while continuing to grow as a developer.
+          I love learning new skills and applying them to real-world projects.
+          Right now, I&apos;m focused on seeking employment towards{" "}
+          <span className="font-semibold text-fulvous">my first paid job</span>{" "}
+          and
+          <Highlight text=" learning CyberSecurity on Coursera" />. My goal is
+          to contribute to projects that make an impact, while continuing to
+          grow as a developer.
         </motion.p>
 
         {/* Fun Facts */}
