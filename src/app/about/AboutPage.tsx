@@ -1,7 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AnimatedLink, Highlight } from "../../../components/textmotion";
+import {
+  AnimatedLink,
+  AnimatedList,
+  Highlight,
+} from "../../../components/textmotion";
 
 export default function AboutPage() {
   return (
@@ -71,46 +75,38 @@ export default function AboutPage() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.8 }}
         >
-          <motion.div
-            className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <h2 className="font-semibold text-fulvous sm:text-2xl">Frontend</h2>
-            <p>
-              HTML, CSS, JavaScript, TypeScript, Next.js, React, WordPress,
-              TailwindCSS, Bootstrap
-            </p>
-          </motion.div>
-          <motion.div
-            className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <h2 className="font-semibold text-fulvous sm:text-2xl">Backend</h2>
-            <p>Wordpress, Node.js, Prisma, REST APIs, SQL </p>
-          </motion.div>
-          <motion.div
-            className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <h2 className="font-semibold text-fulvous sm:text-2xl">
-              Databases
-            </h2>
-            <p>MySQL, Prisma, MongoDB, PostgreSQL</p>
-          </motion.div>
-          <motion.div
-            className="p-4 border rounded-lg shadow-xl bg-night/70 border-fulvous hover:shadow-fulvous"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <h2 className="font-semibold text-fulvous sm:text-2xl">Tools</h2>
-            <p>
-              SEO, Git, AI Workflow Optimization, UI/UX Design, Python
-              Automation
-            </p>
-          </motion.div>
+          <AnimatedList
+            title="Frontend"
+            items={[
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "TypeScript",
+              "Next.js",
+              "React",
+              "WordPress",
+              "TailwindCSS",
+              "Bootstrap",
+            ]}
+          />
+          <AnimatedList
+            title="Backend"
+            items={["Wordpress", "Node.js", "Prisma", "REST APIs", "SQL"]}
+          />
+          <AnimatedList
+            title="Databases"
+            items={["MySQL", "Prisma", "MongoDB", "PostgreSQL"]}
+          />
+          <AnimatedList
+            title="Tools"
+            items={[
+              "SEO",
+              "Git",
+              "AI Workflow Optimization",
+              "UI/UX Design",
+              "Python Automation",
+            ]}
+          />
         </motion.div>
 
         {/* Passion / Future goals */}
