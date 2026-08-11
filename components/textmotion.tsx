@@ -120,7 +120,7 @@ export const AnimatedList = ({
   title = "Undefined",
   items,
   className = "text-2xl font-semibold text-fulvous",
-  hoverSize = 1.1,
+  hoverSize = 1.05,
   tapSize = 0.95,
 }: AnimatedListProps) => {
   return (
