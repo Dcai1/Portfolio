@@ -102,6 +102,7 @@ export const AnimatedLink = ({
       animate={{ opacity: 1 }}
       transition={{ delay, duration }}
       rel="noopener noreferrer"
+      target="_blank"
     >
       {text}
     </motion.a>
