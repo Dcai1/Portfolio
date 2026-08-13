@@ -42,9 +42,9 @@ export default function AboutPage() {
           />{" "}
           <br /> <br />
           My journey began at a young age with curiosity in how websites worked
-          behind the scenes, and it&apos;s grown into a goal to build projects
-          that are visually-pleasing and impactful, like one of my real-world
-          projects for{" "}
+          behind the scenes, and it&apos;s expanded into an overall mindset to
+          build software and websites that are visually-pleasing and impactful,
+          like one of my real-world projects for{" "}
           <AnimatedLink
             href="https://thefoundationontherockrevival.org/"
             text="this church!"
@@ -55,9 +55,13 @@ export default function AboutPage() {
             text="to the point it excites me,"
             className="font-semibold"
           />{" "}
-          and I enjoy learning and applying those new skills I learn. I can be
-          seen either committing and contributing to projects on GitHub, or
-          learning CyberSecurity in my free time.
+          and I enjoy learning and applying those new skills I learn. Thanks to
+          Dan Miller&apos;s{" "}
+          <AnimatedLink
+            text="48 Days To The Work You Love,"
+            href="https://www.amazon.ca/48-Days-Work-You-Love/dp/1433669331"
+          />{" "}
+          I find joy in what I do and will never see myself despising it.
           <br /> <br />
           Because of this, I&apos;m eager to fill a variety of important roles
           like development, testing, and <Highlight text="even" /> security!
@@ -138,18 +142,16 @@ export default function AboutPage() {
           </h2>
           <ul className="space-y-2 text-lg text-gray-300 list-disc list-inside sm:text-xl">
             <li>
-              When I&apos;m deep into dev sessions, I get too engaged (to the
-              point I forget to eat or use the washroom) until I achieve the
-              end-goal. Enjoying what you do has its drawbacks!
+              When I&apos;m deep into dev sessions, I get too engaged until I
+              achieve the end-goal. Enjoying what you do has its drawbacks!
             </li>
             <li>
-              Adding onto my curiousity for web dev at a young age, I was
-              playing around with web development, experimenting with HTML and
-              CSS. I only began taking it seriously at the age of 20.
+              I can be seen either committing and contributing to projects on
+              GitHub, or learning CyberSecurity in my free time.
             </li>
             <li>
-              Outside of coding, I enjoy playing around in dev tools on websites
-              I didn&apos;t make. There are always things to learn!
+              Outside of coding, I enjoy experimenting in dev tools on websites
+              I didn&apos;t build.
             </li>
           </ul>
         </motion.div>
