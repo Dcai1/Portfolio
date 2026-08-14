@@ -151,7 +151,8 @@ export default function ProjectsPage() {
         <p className="my-auto text-xl text-gray-300 sm:text-3xl">
           Here are all of my side projects I&apos;ve built to explore modern
           fullstack development. Each one helped me sharpen my skills and
-          knowledge with architecture, security, and real-world tools.
+          knowledge with architecture, security, and real-world tools like Git
+          and Automation.
         </p>
       </motion.section>
 
