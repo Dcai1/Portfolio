@@ -75,7 +75,7 @@ export default function AboutPage() {
 
         {/* Skills snapshot */}
         <motion.div
-          className="grid grid-cols-2 gap-4 mt-6 text-sm sm:grid-cols-4 sm:text-base"
+          className="grid grid-cols-1 gap-4 mt-6 text-sm md:grid-cols-2 lg:grid-cols-4 sm:text-base"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.8 }}
@@ -96,7 +96,7 @@ export default function AboutPage() {
           />
           <AnimatedList
             title="Backend"
-            items={["Wordpress", "Node.js", "Prisma", "REST APIs", "SQL"]}
+            items={["WordPress", "Node.js", "Prisma", "REST APIs", "SQL"]}
           />
           <AnimatedList
             title="Databases"
