@@ -1,5 +1,7 @@
 "use client";
 
+import { Highlight } from "../../components/textmotion";
+
 import { easeIn, motion, Variants } from "framer-motion";
 import { AnimatedButton } from "../../components/animatedbutton";
 
@@ -58,7 +60,8 @@ export default function HomePage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          Junior Software Engineer and CyberSecurity
+          Junior <Highlight text="Software Engineer" /> and{" "}
+          <Highlight text="CyberSecurity" />
         </motion.h2>
 
         <motion.p
@@ -68,8 +71,12 @@ export default function HomePage() {
           transition={{ duration: 1, delay: 1 }}
         >
           I build interactive fullstack applications with modern tools like
-          Next.js, React, and Python, ensuring security with CyberSecurity best
-          practices.
+          <Highlight text="Next.js, React, TypeScript, and Python" />, ensuring
+          security with{" "}
+          <Highlight
+            text="CyberSecurity best
+          practices."
+          />
         </motion.p>
 
         <AnimatedButton
