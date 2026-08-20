@@ -111,7 +111,7 @@ export default function ProjectsPage() {
             </h2>
             <p className="flex my-auto text-md sm:text-2xl text-gray-300">
               High-Impact Websites in Production and fast-paced projects I
-              worked on or helped ship.
+              worked on and helped ship.
             </p>
           </motion.section>
 
@@ -150,9 +150,9 @@ export default function ProjectsPage() {
         </h2>
         <p className="my-auto text-xl text-gray-300 sm:text-3xl">
           Here are all of my side projects I&apos;ve built to explore modern
-          fullstack development. Each one helped me sharpen my skills and
-          knowledge with architecture, security, and real-world tools like Git
-          and Automation.
+          software application development. Each one helped me sharpen my skills
+          and knowledge with architecture, security, and real-world tools like
+          Git and Automation.
         </p>
       </motion.section>
 
