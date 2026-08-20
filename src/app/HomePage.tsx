@@ -58,7 +58,7 @@ export default function HomePage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          Fullstack Web Developer
+          Junior Software Engineer and CyberSecurity
         </motion.h2>
 
         <motion.p
@@ -68,7 +68,8 @@ export default function HomePage() {
           transition={{ duration: 1, delay: 1 }}
         >
           I build interactive fullstack applications with modern tools like
-          Next.js, React, and Prisma.
+          Next.js, React, and Python, ensuring security with CyberSecurity best
+          practices.
         </motion.p>
 
         <AnimatedButton
