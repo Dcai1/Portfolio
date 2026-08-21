@@ -124,7 +124,7 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          I build interactive fullstack applications with modern tools like
+          I build interactive fullstack applications with modern tools like{" "}
           <Highlight text="Next.js, React, TypeScript, and Python" />, ensuring
           security with{" "}
           <Highlight
