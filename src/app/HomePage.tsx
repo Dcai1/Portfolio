@@ -167,7 +167,7 @@ export default function HomePage() {
               ? {}
               : {
                   opacity: 1,
-                  y: 3,
+                  y: -3,
                 };
 
             return (
