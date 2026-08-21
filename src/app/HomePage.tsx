@@ -1,9 +1,20 @@
 "use client";
 
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Highlight } from "../../components/textmotion";
 
-import { easeIn, motion, Variants } from "framer-motion";
+import {
+  AnimatePresence,
+  easeIn,
+  motion,
+  useReducedMotion,
+  Variants,
+} from "framer-motion";
 import { AnimatedButton } from "../../components/animatedbutton";
+import { sideProjects } from "./projects/sideProjectData";
+
+const MotionLink = motion(Link);
 
 const buttonFadeIn: Variants = {
   hidden: { opacity: 0, y: 15 },
@@ -21,13 +32,56 @@ const buttonFadeIn: Variants = {
   },
 };
 
+const featuredProjects = sideProjects.slice(0, 3);
+
+const projectAccents = [
+  {
+    border: "border-fulvous/90",
+    glow: "shadow-fulvous/10",
+    chip: "border-fulvous/40 text-fulvous",
+  },
+  {
+    border: "border-cyan-300/80",
+    glow: "shadow-cyan-300/10",
+    chip: "border-cyan-300/40 text-cyan-200",
+  },
+  {
+    border: "border-rose-300/80",
+    glow: "shadow-rose-300/10",
+    chip: "border-rose-300/40 text-rose-200",
+  },
+];
+
 export default function HomePage() {
+  const shouldReduceMotion = useReducedMotion();
+  const [openMobileIndex, setOpenMobileIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const syncMobileState = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    syncMobileState();
+    mediaQuery.addEventListener("change", syncMobileState);
+
+    return () => mediaQuery.removeEventListener("change", syncMobileState);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) {
+      setOpenMobileIndex(null);
+    }
+  }, [isMobile]);
+
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen text-lg bg-scroll bg-repeat">
+    <main className="flex flex-col items-center min-h-screen text-lg bg-scroll bg-repeat pb-20">
       {/* Main */}
 
       <motion.div
-        className="flex flex-col items-center max-w-3xl p-8 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl"
+        className="flex flex-col items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
         initial={{ opacity: 0, y: -45, rotate: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -85,6 +139,196 @@ export default function HomePage() {
           variants={buttonFadeIn}
         />
       </motion.div>
+
+      <motion.section
+        className="w-full max-w-7xl px-4 mt-14 sm:px-6 lg:px-8"
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+        whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: easeIn }}
+        viewport={{ once: true, amount: 0.35 }}
+      >
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-fulvous/90">
+            Selected Work
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-snow sm:text-5xl">
+            Featured Projects
+          </h2>
+          <p className="mt-4 text-base leading-7 text-snow/70 sm:text-lg">
+            A quick look at the first few projects from my side-project
+            collection, arranged to stay readable on phones while keeping the
+            angled-card feel on larger screens.
+          </p>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center gap-4 sm:gap-5">
+          {featuredProjects.map((project, index) => {
+            const accent = projectAccents[index % projectAccents.length];
+            const isExternal = /^https?:\/\//.test(project.url);
+            const cardMotion = shouldReduceMotion
+              ? {}
+              : {
+                  y: -4,
+                  rotate: index % 2 === 0 ? -0.6 : 0.6,
+                };
+
+            return (
+              <motion.div
+                key={project.title}
+                className="w-full"
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+                whileInView={
+                  shouldReduceMotion ? undefined : { opacity: 1, y: 0 }
+                }
+                transition={{ duration: 0.6, delay: index * 0.12 }}
+                viewport={{ once: true, amount: 0.35 }}
+              >
+                <div className="md:hidden">
+                  <motion.article
+                    className={`relative overflow-hidden border-2 bg-night/90 px-5 py-5 text-snow shadow-lg ${accent.border} ${accent.glow}`}
+                    style={{
+                      boxShadow: "0 20px 45px rgba(0, 0, 0, 0.28)",
+                    }}
+                    initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, delay: index * 0.08 }}
+                  >
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenMobileIndex((current) =>
+                          current === index ? null : index,
+                        )
+                      }
+                      aria-expanded={openMobileIndex === index}
+                      aria-controls={`featured-project-${index}`}
+                      className="flex w-full items-start justify-between gap-4 text-left focus-visible:outline-none"
+                    >
+                      <div className="min-w-0 space-y-3">
+                        <div
+                          className={`inline-flex w-fit items-center rounded-full border px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.32em] ${accent.chip}`}
+                        >
+                          {`0${index + 1}`}
+                        </div>
+                        <h3 className="text-2xl font-bold leading-tight break-words">
+                          {project.title}
+                        </h3>
+                        <p className="text-sm leading-6 text-snow/65">
+                          Tap to{" "}
+                          {openMobileIndex === index ? "collapse" : "expand"}{" "}
+                          this project card
+                        </p>
+                      </div>
+
+                      <span
+                        className={`mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border text-lg font-semibold transition ${accent.chip} bg-white/5`}
+                        aria-hidden="true"
+                      >
+                        {openMobileIndex === index ? "-" : "+"}
+                      </span>
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {openMobileIndex === index ? (
+                        <motion.div
+                          id={`featured-project-${index}`}
+                          key={`featured-project-${index}`}
+                          className="overflow-hidden"
+                          initial={
+                            shouldReduceMotion
+                              ? false
+                              : { height: 0, opacity: 0 }
+                          }
+                          animate={
+                            shouldReduceMotion
+                              ? { height: "auto", opacity: 1 }
+                              : { height: "auto", opacity: 1 }
+                          }
+                          exit={
+                            shouldReduceMotion
+                              ? { opacity: 0 }
+                              : { height: 0, opacity: 0 }
+                          }
+                          transition={{ duration: 0.3 }}
+                        >
+                          <div className="pt-5 space-y-4 border-t border-white/10">
+                            <p className="text-sm leading-7 text-snow/75 break-words">
+                              {project.description}
+                            </p>
+                            <p className="text-xs font-medium uppercase tracking-[0.28em] text-snow/45">
+                              Tags
+                            </p>
+                            <p className="text-sm leading-6 text-snow/60 break-words">
+                              {project.tags}
+                            </p>
+                            <Link
+                              href={project.url}
+                              target={isExternal ? "_blank" : undefined}
+                              rel={
+                                isExternal ? "noopener noreferrer" : undefined
+                              }
+                              aria-label={`Open ${project.title}${isExternal ? " in a new tab" : ""}`}
+                              className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-snow/90 transition hover:border-white/20 hover:bg-fulvous/15 hover:text-snow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fulvous focus-visible:ring-offset-2 focus-visible:ring-offset-night"
+                            >
+                              View Project
+                            </Link>
+                          </div>
+                        </motion.div>
+                      ) : null}
+                    </AnimatePresence>
+                  </motion.article>
+                </div>
+
+                <div className="hidden md:block">
+                  <MotionLink
+                    href={project.url}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    aria-label={`Open ${project.title}${isExternal ? " in a new tab" : ""}`}
+                    className={`group relative block w-full overflow-hidden border-2 border-opacity-90 bg-night/90 px-5 py-6 text-left text-snow shadow-lg transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fulvous focus-visible:ring-offset-2 focus-visible:ring-offset-night hover:shadow-xl ${accent.border} ${accent.glow} md:mx-auto md:w-[90%] md:px-8 md:py-8 md:[transform:skewX(-10deg)]`}
+                    style={{
+                      boxShadow: "0 20px 45px rgba(0, 0, 0, 0.28)",
+                    }}
+                    whileHover={shouldReduceMotion ? undefined : cardMotion}
+                    whileTap={shouldReduceMotion ? undefined : { scale: 0.985 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-fulvous/5 opacity-80 transition duration-300 group-hover:opacity-100" />
+                    <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+
+                    <div className="relative flex flex-col gap-4 md:[transform:skewX(10deg)] lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+                      <div className="min-w-0 flex-1 space-y-3">
+                        <div
+                          className={`inline-flex w-fit items-center rounded-full border px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.32em] ${accent.chip}`}
+                        >
+                          {`0${index + 1}`}
+                        </div>
+                        <h3 className="text-2xl font-bold leading-tight break-words sm:text-3xl">
+                          {project.title}
+                        </h3>
+                        <p className="max-w-3xl text-sm leading-7 text-snow/75 break-words sm:text-base">
+                          {project.description}
+                        </p>
+                      </div>
+
+                      <div className="flex flex-col gap-3 lg:max-w-xs lg:items-end">
+                        <p className="text-xs font-medium uppercase tracking-[0.28em] text-snow/45">
+                          Side project
+                        </p>
+                        <p className="text-sm leading-6 text-snow/60 break-words sm:text-base lg:text-right">
+                          {project.tags}
+                        </p>
+                        <span className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-snow/90 transition group-hover:border-white/20 group-hover:bg-fulvous/15 group-hover:text-snow">
+                          View Project
+                        </span>
+                      </div>
+                    </div>
+                  </MotionLink>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </motion.section>
     </main>
   );
 }
