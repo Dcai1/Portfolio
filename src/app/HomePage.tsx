@@ -14,7 +14,7 @@ import {
 import { AnimatedButton } from "../../components/animatedbutton";
 import { sideProjects } from "./projects/sideProjectData";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const buttonFadeIn: Variants = {
   hidden: { opacity: 0, y: 15 },
@@ -41,12 +41,12 @@ const projectAccents = [
     chip: "border-fulvous/40 text-fulvous",
   },
   {
-    border: "border-cyan-300/80",
+    border: "border-rose-300/80",
     glow: "shadow-cyan-300/10",
     chip: "border-cyan-300/40 text-cyan-200",
   },
   {
-    border: "border-rose-300/80",
+    border: "border-cyan-300/80",
     glow: "shadow-rose-300/10",
     chip: "border-rose-300/40 text-rose-200",
   },
@@ -77,11 +77,11 @@ export default function HomePage() {
   }, [isMobile]);
 
   return (
-    <main className="flex flex-col items-center min-h-screen text-lg bg-scroll bg-repeat pb-20">
+    <main className="flex flex-col items-center min-h-screen pb-20 text-lg bg-scroll bg-repeat">
       {/* Main */}
 
       <motion.div
-        className="flex flex-col items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
+        className="flex flex-col my-auto items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
         initial={{ opacity: 0, y: -45, rotate: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -141,13 +141,13 @@ export default function HomePage() {
       </motion.div>
 
       <motion.section
-        className="w-full max-w-7xl px-4 mt-14 sm:px-6 lg:px-8"
+        className="w-full px-4 max-w-7xl mt-14 sm:px-6 lg:px-8"
         initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
         whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: easeIn }}
         viewport={{ once: true, amount: 0.35 }}
       >
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="max-w-3xl mx-auto text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-fulvous/90">
             Selected Work
           </p>
@@ -155,21 +155,19 @@ export default function HomePage() {
             Featured Projects
           </h2>
           <p className="mt-4 text-base leading-7 text-snow/70 sm:text-lg">
-            A quick look at the first few projects from my side-project
-            collection, arranged to stay readable on phones while keeping the
-            angled-card feel on larger screens.
+            My most <Highlight text="notable" /> Side Projects:
           </p>
         </div>
 
-        <div className="mt-8 flex flex-col items-center gap-4 sm:gap-5">
+        <div className="flex flex-col items-center gap-4 mt-8 sm:gap-5">
           {featuredProjects.map((project, index) => {
             const accent = projectAccents[index % projectAccents.length];
             const isExternal = /^https?:\/\//.test(project.url);
             const cardMotion = shouldReduceMotion
               ? {}
               : {
-                  y: -4,
-                  rotate: index % 2 === 0 ? -0.6 : 0.6,
+                  opacity: 1,
+                  y: 3,
                 };
 
             return (
@@ -202,7 +200,7 @@ export default function HomePage() {
                       }
                       aria-expanded={openMobileIndex === index}
                       aria-controls={`featured-project-${index}`}
-                      className="flex w-full items-start justify-between gap-4 text-left focus-visible:outline-none"
+                      className="flex items-start justify-between w-full gap-4 text-left focus-visible:outline-none"
                     >
                       <div className="min-w-0 space-y-3">
                         <div
@@ -252,13 +250,13 @@ export default function HomePage() {
                           transition={{ duration: 0.3 }}
                         >
                           <div className="pt-5 space-y-4 border-t border-white/10">
-                            <p className="text-sm leading-7 text-snow/75 break-words">
+                            <p className="text-sm leading-7 break-words text-snow/75">
                               {project.description}
                             </p>
                             <p className="text-xs font-medium uppercase tracking-[0.28em] text-snow/45">
                               Tags
                             </p>
-                            <p className="text-sm leading-6 text-snow/60 break-words">
+                            <p className="text-sm leading-6 break-words text-snow/60">
                               {project.tags}
                             </p>
                             <Link
@@ -268,7 +266,7 @@ export default function HomePage() {
                                 isExternal ? "noopener noreferrer" : undefined
                               }
                               aria-label={`Open ${project.title}${isExternal ? " in a new tab" : ""}`}
-                              className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-snow/90 transition hover:border-white/20 hover:bg-fulvous/15 hover:text-snow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fulvous focus-visible:ring-offset-2 focus-visible:ring-offset-night"
+                              className="inline-flex items-center px-4 py-2 text-sm font-semibold transition border rounded-full border-white/10 bg-white/5 text-snow/90 hover:border-white/20 hover:bg-fulvous/15 hover:text-snow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fulvous focus-visible:ring-offset-2 focus-visible:ring-offset-night"
                             >
                               View Project
                             </Link>
@@ -285,18 +283,18 @@ export default function HomePage() {
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     aria-label={`Open ${project.title}${isExternal ? " in a new tab" : ""}`}
-                    className={`group relative block w-full overflow-hidden border-2 border-opacity-90 bg-night/90 px-5 py-6 text-left text-snow shadow-lg transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fulvous focus-visible:ring-offset-2 focus-visible:ring-offset-night hover:shadow-xl ${accent.border} ${accent.glow} md:mx-auto md:w-[90%] md:px-8 md:py-8 md:[transform:skewX(-10deg)]`}
+                    className={`group relative block w-full overflow-hidden border-2 border-opacity-90 bg-night/90 px-5 py-6 text-left text-snow shadow-lg transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fulvous focus-visible:ring-offset-2 focus-visible:ring-offset-night hover:shadow-xl ${accent.border} ${accent.glow} md:mx-auto md:w-[90%] md:px-8 md:py-8`}
                     style={{
                       boxShadow: "0 20px 45px rgba(0, 0, 0, 0.28)",
                     }}
                     whileHover={shouldReduceMotion ? undefined : cardMotion}
                     whileTap={shouldReduceMotion ? undefined : { scale: 0.985 }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-fulvous/5 opacity-80 transition duration-300 group-hover:opacity-100" />
-                    <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+                    <div className="absolute inset-0 transition duration-300 bg-gradient-to-br from-white/5 via-transparent to-fulvous/5 opacity-80 group-hover:opacity-100" />
+                    <div className="absolute left-0 w-1 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
 
-                    <div className="relative flex flex-col gap-4 md:[transform:skewX(10deg)] lg:flex-row lg:items-center lg:justify-between lg:gap-8">
-                      <div className="min-w-0 flex-1 space-y-3">
+                    <div className="relative flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+                      <div className="flex-1 min-w-0 space-y-3">
                         <div
                           className={`inline-flex w-fit items-center rounded-full border px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.32em] ${accent.chip}`}
                         >
@@ -305,7 +303,7 @@ export default function HomePage() {
                         <h3 className="text-2xl font-bold leading-tight break-words sm:text-3xl">
                           {project.title}
                         </h3>
-                        <p className="max-w-3xl text-sm leading-7 text-snow/75 break-words sm:text-base">
+                        <p className="max-w-3xl text-sm leading-7 break-words text-snow/75 sm:text-base">
                           {project.description}
                         </p>
                       </div>
@@ -314,10 +312,10 @@ export default function HomePage() {
                         <p className="text-xs font-medium uppercase tracking-[0.28em] text-snow/45">
                           Side project
                         </p>
-                        <p className="text-sm leading-6 text-snow/60 break-words sm:text-base lg:text-right">
+                        <p className="text-sm leading-6 break-words text-snow/60 sm:text-base lg:text-right">
                           {project.tags}
                         </p>
-                        <span className="inline-flex w-fit items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-snow/90 transition group-hover:border-white/20 group-hover:bg-fulvous/15 group-hover:text-snow">
+                        <span className="inline-flex items-center px-4 py-2 text-sm font-semibold transition border rounded-full w-fit border-white/10 bg-white/5 text-snow/90 group-hover:border-white/20 group-hover:bg-fulvous/15 group-hover:text-snow">
                           View Project
                         </span>
                       </div>
