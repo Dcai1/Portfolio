@@ -80,66 +80,68 @@ export default function HomePage() {
     <main className="flex flex-col items-center min-h-screen pb-20 text-lg bg-scroll bg-repeat">
       {/* Main */}
 
-      <motion.div
-        className="flex flex-col my-auto mx-auto items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
-        initial={{ opacity: 0, y: -45, rotate: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        whileHover={{
-          rotate: [-1, 2, -1, 1, 0],
-          transition: { duration: 0.6, ease: easeIn },
-        }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <motion.h1
-          className="text-5xl font-bold text-white sm:text-7xl"
-          initial={{ opacity: 0, y: -20 }}
+      {/* Grab full page height */}
+      <div className="min-h-screen">
+        <motion.div
+          className="flex flex-col my-auto mx-auto items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
+          initial={{ opacity: 0, y: -45, rotate: 0 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: easeIn, delay: 0.3 }}
+          transition={{ duration: 0.7 }}
+          whileHover={{
+            rotate: [-1, 2, -1, 1, 0],
+            transition: { duration: 0.6, ease: easeIn },
+          }}
+          whileTap={{ scale: 0.95 }}
         >
-          Hi, I&apos;m{" "}
-          <motion.span
-            className="underline text-fulvous underline-offset-8"
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.1 }}
-            transition={{ duration: 1, delay: 2 }}
+          <motion.h1
+            className="text-5xl font-bold text-white sm:text-7xl"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: easeIn, delay: 0.3 }}
           >
-            David
-          </motion.span>
-        </motion.h1>
+            Hi, I&apos;m{" "}
+            <motion.span
+              className="underline text-fulvous underline-offset-8"
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.1 }}
+              transition={{ duration: 1, delay: 2 }}
+            >
+              David
+            </motion.span>
+          </motion.h1>
 
-        <motion.h2
-          className="mt-4 text-2xl font-medium text-gray-300 sm:text-4xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.6 }}
-        >
-          Junior <Highlight text="Software Engineer" /> and{" "}
-          <Highlight text="CyberSecurity" />
-        </motion.h2>
+          <motion.h2
+            className="mt-4 text-2xl font-medium text-gray-300 sm:text-4xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+          >
+            Junior <Highlight text="Software Engineer" /> and{" "}
+            <Highlight text="CyberSecurity" />
+          </motion.h2>
 
-        <motion.p
-          className="mt-4 text-lg text-gray-400 sm:text-xl"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          I build interactive fullstack applications with modern tools like{" "}
-          <Highlight text="Next.js, React, TypeScript, and Python" />, ensuring
-          security using{" "}
-          <Highlight
-            text="CyberSecurity best
+          <motion.p
+            className="mt-4 text-lg text-gray-400 sm:text-xl"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            I build interactive fullstack applications with modern tools like{" "}
+            <Highlight text="Next.js, React, TypeScript, and Python" />,
+            ensuring security using{" "}
+            <Highlight
+              text="CyberSecurity best
           practices."
+            />
+          </motion.p>
+
+          <AnimatedButton
+            url="/projects"
+            text="View My Projects"
+            variants={buttonFadeIn}
           />
-        </motion.p>
-
-        <AnimatedButton
-          url="/projects"
-          text="View My Projects"
-          variants={buttonFadeIn}
-        />
-      </motion.div>
-
+        </motion.div>
+      </div>
       <motion.section
         className="w-full px-4 max-w-7xl mt-14 sm:px-6 lg:px-8"
         initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
