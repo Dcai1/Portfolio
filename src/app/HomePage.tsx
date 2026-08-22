@@ -81,7 +81,7 @@ export default function HomePage() {
       {/* Main */}
 
       <motion.div
-        className="flex flex-col my-auto items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
+        className="flex flex-col my-auto mx-auto items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
         initial={{ opacity: 0, y: -45, rotate: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
@@ -126,7 +126,7 @@ export default function HomePage() {
         >
           I build interactive fullstack applications with modern tools like{" "}
           <Highlight text="Next.js, React, TypeScript, and Python" />, ensuring
-          security with{" "}
+          security using{" "}
           <Highlight
             text="CyberSecurity best
           practices."
