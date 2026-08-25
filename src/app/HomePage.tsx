@@ -12,7 +12,7 @@ import {
   Variants,
 } from "framer-motion";
 import { AnimatedButton } from "../../components/animatedbutton";
-import { sideProjects } from "./projects/sideProjectData";
+import { sideProjects } from "./projects/ProjectData";
 
 const MotionLink = motion.create(Link);
 
@@ -32,7 +32,7 @@ const buttonFadeIn: Variants = {
   },
 };
 
-const featuredProjects = sideProjects.slice(0, 3);
+const featuredProjects = sideProjects.slice(0, 4);
 
 const projectAccents = [
   {
@@ -41,12 +41,17 @@ const projectAccents = [
     chip: "border-fulvous/40 text-fulvous",
   },
   {
-    border: "border-rose-300/80",
+    border: "border-white/80",
+    glow: "shadow-white/10",
+    chip: "border-white/40 text-white",
+  },
+  {
+    border: "border-cyan-300/80",
     glow: "shadow-cyan-300/10",
     chip: "border-cyan-300/40 text-cyan-200",
   },
   {
-    border: "border-cyan-300/80",
+    border: "border-rose-300/80",
     glow: "shadow-rose-300/10",
     chip: "border-rose-300/40 text-rose-200",
   },
@@ -142,6 +147,9 @@ export default function HomePage() {
           />
         </motion.div>
       </div>
+
+      {/*---------------------------------- FEATURED PROJECTS ----------------------------------- */}
+
       <motion.section
         className="w-full px-4 max-w-7xl mt-14 sm:px-6 lg:px-8"
         initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
@@ -150,18 +158,13 @@ export default function HomePage() {
         viewport={{ once: true, amount: 0.35 }}
       >
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.35em] text-fulvous/90">
-            Selected Work
-          </p>
           <h2 className="mt-3 text-3xl font-bold text-snow sm:text-5xl">
             Featured Projects
           </h2>
           <p className="mt-4 text-base leading-7 text-snow/70 sm:text-lg">
-            My most <Highlight text="notable" /> Side Projects:
+            My most <Highlight text="Notably Deployed" /> Projects:
           </p>
         </div>
-
-        {/*---------------------------------- FEATURED PROJECTS ----------------------------------- */}
 
         <div className="flex flex-col items-center gap-4 mt-8 sm:gap-5">
           {featuredProjects.map((project, index) => {
