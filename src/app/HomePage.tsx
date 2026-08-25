@@ -78,12 +78,12 @@ export default function HomePage() {
 
   return (
     <main className="flex flex-col items-center min-h-screen pb-20 text-lg bg-scroll bg-repeat">
-      {/* Main */}
+      {/* --------------------------------- INTRO CARD --------------------------------- */}
 
       {/* Grab full page height */}
-      <div className="flex min-h-[calc(100dvh-3.5rem)] w-full items-center justify-center px-4 sm:px-6">
+      <div className="homepage-card-wrapper">
         <motion.div
-          className="flex flex-col items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
+          className="homepage-card bg-night/90 border-fulvous "
           initial={{ opacity: 0, y: -45, rotate: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}

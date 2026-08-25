@@ -32,3 +32,38 @@ body {
 .text-yourblog {
   color: rgba(22, 185, 197, 0.7);
 }
+
+.homepage-card-wrapper {
+  display: flex;
+  min-height: calc(100dvh - 3.5rem /* 56px */);
+  padding-inline: calc(var(--spacing) * 4) /* 1rem = 16px */;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media (width >= 40rem /* 640px */) {
+    padding-inline: calc(var(--spacing) * 6) /* 1.5rem = 24px */;
+  }
+}
+
+.homepage-card {
+  display: flex;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  border-width: 2px;
+  text-align: center;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  width: min(100%, 48rem);
+
+  @media (min-width: 640px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
