@@ -45,3 +45,4 @@ TODO.md
 
 # playwright
 /.playwright-cli
+/.playwright-mcp

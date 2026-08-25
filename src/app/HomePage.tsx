@@ -81,9 +81,9 @@ export default function HomePage() {
       {/* Main */}
 
       {/* Grab full page height */}
-      <div className="min-h-screen">
+      <div className="flex min-h-[calc(100dvh-3.5rem)] w-full items-center justify-center px-4 sm:px-6">
         <motion.div
-          className="flex flex-col my-auto mx-auto items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
+          className="flex flex-col items-center w-[min(100%,48rem)] px-6 py-10 text-center border-2 shadow-lg bg-night/90 border-fulvous rounded-2xl sm:px-8"
           initial={{ opacity: 0, y: -45, rotate: 0 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -126,9 +126,9 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            I build interactive fullstack applications with modern tools like{" "}
-            <Highlight text="Next.js, React, TypeScript, and Python" />,
-            ensuring security using{" "}
+            I architect interactive fullstack applications with modern tools
+            like <Highlight text="Next.js, React, TypeScript, and Python" />,
+            deploying security using{" "}
             <Highlight
               text="CyberSecurity best
           practices."
@@ -161,6 +161,8 @@ export default function HomePage() {
           </p>
         </div>
 
+        {/*---------------------------------- FEATURED PROJECTS ----------------------------------- */}
+
         <div className="flex flex-col items-center gap-4 mt-8 sm:gap-5">
           {featuredProjects.map((project, index) => {
             const accent = projectAccents[index % projectAccents.length];
@@ -168,8 +170,9 @@ export default function HomePage() {
             const cardMotion = shouldReduceMotion
               ? {}
               : {
+                  // PROJECT CARD HOVER ANIMATION CONFIG
                   opacity: 1,
-                  y: -3,
+                  scale: 1.02,
                 };
 
             return (
