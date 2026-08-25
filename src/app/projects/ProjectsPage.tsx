@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { AnimatedProject } from "../../../components/animatedproject";
-import { AnimatedRealWorldProject } from "../../../components/animatedrealworldproject";
 import { easeIn, motion, Variants } from "framer-motion";
-import { realWorldProjects } from "./realWorldData";
-import { sideProjects } from "./sideProjectData";
+import { sideProjects } from "./ProjectData";
+import { Highlight } from "../../../components/textmotion";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 15 },
@@ -33,6 +32,7 @@ export default function ProjectsPage() {
         transition={{ duration: 0.5 }}
         viewport={{ amount: 0.3 }}
       >
+        {/* ------------------- TITLE ------------------- */}
         <motion.h1
           className="text-6xl font-bold sm:text-9xl"
           variants={fadeInUp}
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
         </motion.h2>
       </motion.div>
 
-      {/* Side Projects Section */}
+      {/* ------------------------- Side Projects Section ----------------------------  */}
       <motion.section
         className="flex max-w-3xl mx-auto space-y-6 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -80,73 +80,21 @@ export default function ProjectsPage() {
         transition={{ duration: 1, delay: 0.5 }}
       >
         <p className="my-auto text-xl text-gray-300 sm:text-3xl">
-          These are the projects I&apos;ve developed and/or helped ship during
-          my early career. I&apos;ve included a mix of both personal and
+          These are all the projects I&apos;ve developed and deployed during my
+          early career. I&apos;ve included a mix of both personal and
           professional projects.
         </p>
       </motion.section>
 
-      {/* Real World Projects Section */}
-      <section className="relative py-8">
-        <div className="absolute left-0 right-0 top-0 bottom-0 pointer-events-none flex justify-center">
-          <div
-            className="w-full max-w-6xl h-full rounded-2xl"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(226,132,19,0.04), rgba(0,0,0,0))",
-            }}
-          />
-        </div>
-
-        {/* Text Content */}
-        <div className="relative z-10">
-          <motion.section
-            className="flex flex-col space-x-6 my-auto pb-6 max-w-3xl mx-auto space-y-6 text-center mb-2"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7 }}
-          >
-            <h2 className="flex mx-auto my-auto text-3xl sm:gap-6 sm:text-6xl pb-4 font-bold">
-              Real World Projects
-            </h2>
-            <p className="flex my-auto text-md sm:text-2xl text-gray-300">
-              High-Impact Websites in Production and fast-paced projects I
-              worked on and helped ship.
-            </p>
-          </motion.section>
-
-          {/* Real World Projects Display */}
-          <section className="grid max-w-6xl grid-cols-1 items-start gap-12 mx-auto sm:grid-cols-2 lg:grid-cols-3 m-5">
-            {/* Real World Projects Map */}
-            {realWorldProjects.map((p) => (
-              <div
-                key={p.title}
-                className="flex items-center justify-center w-full"
-              >
-                <AnimatedRealWorldProject
-                  variants={scaleUpOnView}
-                  title={p.title}
-                  description={p.description}
-                  url={p.url}
-                  tags={p.tags}
-                  color={p.color}
-                  icons={p.icons}
-                />
-              </div>
-            ))}
-          </section>
-        </div>
-      </section>
-
-      {/* Side Projects Section */}
+      {/* -------------------------- Projects Render ---------------------- */}
       <motion.section
         className="flex flex-col max-w-3xl mx-auto space-y-6 text-center"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <h2 className="flex mx-auto my-auto text-3xl sm:gap-6 sm:text-6xl pb-4 font-bold">
-          Side Projects
+        <h2 className="flex pb-4 mx-auto my-auto text-3xl font-bold sm:gap-6 sm:text-6xl">
+          My <Highlight text="Projects" />
         </h2>
         <p className="my-auto text-xl text-gray-300 sm:text-3xl">
           Here are all of my side projects I&apos;ve built to explore modern
@@ -157,7 +105,7 @@ export default function ProjectsPage() {
       </motion.section>
 
       {/* Projects Grid */}
-      <section className="grid max-w-6xl grid-cols-1 items-start gap-12 mx-auto sm:grid-cols-2 lg:grid-cols-3 m-5">
+      <section className="grid items-start max-w-6xl grid-cols-1 gap-12 m-5 mx-auto sm:grid-cols-2 lg:grid-cols-3">
         {/* Side Projects Map */}
         {sideProjects.map((p) => (
           <div
